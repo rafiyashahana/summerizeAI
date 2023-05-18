@@ -1,11 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { rootReducer } from "./rootReducer";
-import { articleApi } from "./articleReducer";
+import { articleApi } from "./article";
 
 export const store = configureStore({
-  reducer: { rootReducer },
+  reducer: {
+    [articleApi.reducerPath]: articleApi.reducer,
+  },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }).concat(articleApi.middleware),
+    getDefaultMiddleware().concat(articleApi.middleware),
 });

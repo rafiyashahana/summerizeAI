@@ -23,8 +23,4 @@ export const articleApi = createApi({
   }),
 });
 
-export const articleReducer = articleApi.reducer;
-
-// [articleApi.reducerPath]: articleApi.reducer;
-
-export const { reducerPath, useLazyGetSummaryQuery } = articleApi;
+export const { useLazyGetSummaryQuery } = articleApi;
